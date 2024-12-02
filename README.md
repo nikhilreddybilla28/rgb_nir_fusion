@@ -1,4 +1,4 @@
-#RGB-NIR Fusion for Semantic Segmentation of driving data
+# RGB-NIR Fusion for Semantic Segmentation of driving data
 
 
 The code is developed on top of [MMSegmentation v0.27.0](https://github.com/open-mmlab/mmsegmentation/tree/v0.27.0).
