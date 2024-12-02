@@ -1,8 +1,7 @@
-# InternImage for Semantic Segmentation
+#RGB-NIR Fusion for Semantic Segmentation of driving data
 
-This folder contains the implementation of the InternImage for semantic segmentation. 
 
-Our segmentation code is developed on top of [MMSegmentation v0.27.0](https://github.com/open-mmlab/mmsegmentation/tree/v0.27.0).
+The code is developed on top of [MMSegmentation v0.27.0](https://github.com/open-mmlab/mmsegmentation/tree/v0.27.0).
 
 ## Usage
 
@@ -18,7 +17,7 @@ cd InternImage
 - Create a conda virtual environment and activate it:
 
 ```bash
-conda create -n internimage python=3.7 -y
+conda create -n rgb-nir python=3.7 -y
 conda activate internimage
 ```
 
@@ -62,7 +61,7 @@ Prepare datasets according to the [guidelines](https://github.com/open-mmlab/mms
 
 ### Evaluation
 
-To evaluate our `InternImage` on ADE20K val, run:
+To evaluate, run:
 
 ```bash
 sh dist_test.sh <config-file> <checkpoint> <gpu-num> --eval mIoU
@@ -82,7 +81,7 @@ sh dist_test.sh configs/ade20k/upernet_internimage_b_512_160k_ade20k.py checkpoi
 
 ### Training
 
-To train an `InternImage` on ADE20K, run:
+To train an `InternImage` on IDDAW, run:
 
 ```bash
 sh dist_train.sh <config-file> <gpu-num>
