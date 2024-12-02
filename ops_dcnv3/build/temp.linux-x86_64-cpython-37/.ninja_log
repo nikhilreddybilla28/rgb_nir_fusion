@@ -1,0 +1,4 @@
+# ninja log v5
+1	8358	1681722691	/home/furqan.shaik/InternImage/segmentation/ops_dcnv3/build/temp.linux-x86_64-cpython-37/home/furqan.shaik/InternImage/segmentation/ops_dcnv3/src/cpu/dcnv3_cpu.o	f824948511e364eb
+2	21793	1681722704	/home/furqan.shaik/InternImage/segmentation/ops_dcnv3/build/temp.linux-x86_64-cpython-37/home/furqan.shaik/InternImage/segmentation/ops_dcnv3/src/vision.o	2af9c47c09130c27
+1	54404	1681722737	/home/furqan.shaik/InternImage/segmentation/ops_dcnv3/build/temp.linux-x86_64-cpython-37/home/furqan.shaik/InternImage/segmentation/ops_dcnv3/src/cuda/dcnv3_cuda.o	1ff8c2fe1f2326a3
