@@ -2,15 +2,15 @@
 # module load u18/cuda/10.2
 # # module load u18/cudnn/8.3.3-cuda-10.2
 
-# scratch_dir="/ssd_scratch/cvit/furqan.shaik"
+# scratch_dir="/ssd_scratch/cvit/nikhil.reddy"
 # mkdir -p ${scratch_dir}
 # # work_dir="work_dirs/resume"
-# # share3_dir=furqan.shaik@ada:/share3/furqan.shaik
+# # share3_dir=nikhil.reddy@ada:/share3/nikhil.reddy
 
 # if [ ! -f "${scratch_dir}/cityscapes" ]; then
 # 	# Loading data from dataset to scratch
-# 	# rsync -a furqan.shaik@ada:/share1/dataset/cityscapes  ${scratch_dir}/
-# 	rsync -avz furqan.shaik@ada:/share1/dataset/cityscapes ${scratch_dir}/
+# 	# rsync -a nikhil.reddy@ada:/share1/dataset/cityscapes  ${scratch_dir}/
+# 	rsync -avz nikhil.reddy@ada:/share1/dataset/cityscapes ${scratch_dir}/
 #     cd ${scratch_dir}
 # 	cd cityscapes/
 # 	# mkdir -p ${work_dir}
