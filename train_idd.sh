@@ -7,7 +7,6 @@
 #SBATCH --time=4-00:00:00
 #SBATCH --job-name=internimage_idd
 #SBATCH --output=log_outputs/idd_internimage_xl_%J.out
-#SBATCH --mail-user=nikhil.reddy@research.iiit.ac.in
 
 source activate internimage
 module load u18/cuda/10.2
