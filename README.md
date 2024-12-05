@@ -59,25 +59,8 @@ python test.py
 Prepare datasets according to the [guidelines](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/dataset_prepare.md#prepare-datasets) in MMSegmentation.
 
 
-### Evaluation
 
-To evaluate, run:
 
-```bash
-sh dist_test.sh <config-file> <checkpoint> <gpu-num> --eval mIoU
-```
-
-For example, to evaluate the `InternImage-T` with a single GPU:
-
-```bash
-python test.py configs/ade20k/upernet_internimage_t_512_160k_ade20k.py checkpoint_dir/seg/upernet_internimage_t_512_160k_ade20k.pth --eval mIoU
-```
-
-For example, to evaluate the `InternImage-B` with a single node with 8 GPUs:
-
-```bash
-sh dist_test.sh configs/ade20k/upernet_internimage_b_512_160k_ade20k.py checkpoint_dir/seg/upernet_internimage_b_512_160k_ade20k.pth 8 --eval mIoU
-```
 
 ### Training
 
@@ -90,7 +73,7 @@ sh dist_train.sh <config-file> <gpu-num>
 For example, to train `InternImage-T` with 8 GPU on 1 node (total batch size 16), run:
 
 ```bash
-sh dist_train.sh configs/ade20k/upernet_internimage_t_512_160k_ade20k.py 8
+sh dist_train.sh configs/iddaw/upernet_internimage_t_512_160k_iddaw.py 8
 ```
 
 ### Manage Jobs with Slurm
@@ -98,7 +81,7 @@ sh dist_train.sh configs/ade20k/upernet_internimage_t_512_160k_ade20k.py 8
 For example, to train `InternImage-XL` with 8 GPU on 1 node (total batch size 16), run:
 
 ```bash
-GPUS=8 sh slurm_train.sh <partition> <job-name> configs/ade20k/upernet_internimage_xl_640_160k_ade20k.py
+GPUS=8 sh slurm_train.sh <partition> <job-name> configs/iddaw/upernet_internimage_xl_640_160k_iddaw.py
 ```
 
 ### Image Demo
@@ -111,34 +94,3 @@ CUDA_VISIBLE_DEVICES=0 python image_demo.py \
   --palette ade20k 
 ```
 
-### Export
-
-To export a segmentation model from PyTorch to TensorRT, run:
-```shell
-MODEL="model_name"
-CKPT_PATH="/path/to/model/ckpt.pth"
-
-python deploy.py \
-    "./deploy/configs/mmseg/segmentation_tensorrt_static-512x512.py" \
-    "./configs/ade20k/${MODEL}.py" \
-    "${CKPT_PATH}" \
-    "./deploy/demo.png" \
-    --work-dir "./work_dirs/mmseg/${MODEL}" \
-    --device cuda \
-    --dump-info
-```
-
-For example, to export `upernet_internimage_t_512_160k_ade20k` from PyTorch to TensorRT, run:
-```shell
-MODEL="upernet_internimage_t_512_160k_ade20k"
-CKPT_PATH="/path/to/model/ckpt/upernet_internimage_t_512_160k_ade20k.pth"
-
-python deploy.py \
-    "./deploy/configs/mmseg/segmentation_tensorrt_static-512x512.py" \
-    "./configs/ade20k/${MODEL}.py" \
-    "${CKPT_PATH}" \
-    "./deploy/demo.png" \
-    --work-dir "./work_dirs/mmseg/${MODEL}" \
-    --device cuda \
-    --dump-info
-```
